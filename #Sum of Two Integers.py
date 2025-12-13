@@ -17,7 +17,6 @@ Output: 5
 '''
 
 class Solution:
-
     def getSum(self, a: int, b: int) -> int:
         MASK = 0xFFFFFFFF # 32 bits of 1s -> 4294967295
         MAX_INT = 0x7FFFFFFF # max signed 32-bit -> 2147483647
