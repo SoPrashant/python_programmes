@@ -31,18 +31,23 @@ class Solution:
         INT_MIN = -2**31
         INT_MAX = 2**31 - 1
         num = ''
+        neg = False
 
-        if x < INT_MIN or x > INT_MAX:
-            return 0
+        if x == 0:
+            return 0    
         else:
             if x<0:
-                x = -x    
+                x = -x
+                neg = True   
             while x>0:
                 b=x%10
                 x=x//10
                 num += str(b)
-                
-            return int(num) 
 
-                   
+            if int(num) < INT_MIN or int(num) > INT_MAX:
+                return 0    
+            elif neg:
+                return -int(num)
+            else:
+                return int(num)    
 
